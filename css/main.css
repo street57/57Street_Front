@@ -286,3 +286,7 @@ main {
 .disabled{
     display: none;
 }
+
+.d-none{
+  display: none;
+}

@@ -101,11 +101,33 @@ function actualizarBotonesEliminar() {
  botonComprar.addEventListener("click", comprarCarrito);
 
  function comprarCarrito(){
-     productosEnCarrito.length = 0;
-     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-     
-     contenedorCarritoVacio.classList.add("disabled");
-          contenedorCarritoProductos.classList.add("disabled");
-          contenedorCarritoAcciones.classList.add("disabled");
-          contenedorCarritoComprado.classList.remove("disabled");
+    const usuario = SessionUtils.getUsuario();
+    if (usuario.nombres == "ANONIMO") {
+        goToIniciarSesion();
+        return;
+    }
+
+    productosEnCarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    
+    contenedorCarritoVacio.classList.add("disabled");
+        contenedorCarritoProductos.classList.add("disabled");
+        contenedorCarritoAcciones.classList.add("disabled");
+        contenedorCarritoComprado.classList.remove("disabled");
  }
+
+ function setNombreUsuarioHeader() {
+    const usuario = SessionUtils.getUsuario();
+    if (usuario.nombres != "ANONIMO") {
+        // Añadimos el nombre al titulo
+        const header = document.querySelector("#headerMenu");
+        header.innerHTML = `${header.innerHTML} <p>${usuario.fullName}</p>`;
+    }
+  }
+  
+  function goToIniciarSesion() {
+    window.location.href = "http://127.0.0.1:5500/login.html";
+  }
+  
+  setNombreUsuarioHeader();
+  

@@ -303,3 +303,23 @@ function actualizarNumerito() {
   );
   numerito.innerText = nuevoNumerito;
 }
+
+function validateSesion() {
+  const usuario = SessionUtils.getUsuario();
+  if (usuario.nombres == "ANONIMO") {
+    document.getElementById("cerrarSesion").classList.add("d-none");
+    document.getElementById("iniciarSesion").classList.remove("d-none");
+  } else {
+    document.getElementById("cerrarSesion").classList.remove("d-none");
+    document.getElementById("iniciarSesion").classList.add("d-none");
+    // Añadimos el nombre al titulo
+    const header = document.querySelector("#headerMenu");
+    header.innerHTML = `${header.innerHTML} <p>${usuario.fullName}</p>`;
+  }
+}
+
+function goToIniciarSesion() {
+  window.location.href = "http://127.0.0.1:5500/login.html";
+}
+
+validateSesion();

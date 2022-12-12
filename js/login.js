@@ -56,7 +56,8 @@ function loginUsuario  () {
         contentType: "application/json; charset=utf-8",
         traditional: true,
         success: function (data) {
-            alert("Inicio de sesión exitoso")
+            SessionUtils.setUsuarioSession(data);
+            SessionUtils.setToken(data.token);
             window.location.href = "http://127.0.0.1:5500";
         },
         error: function(xhr, status, error) {

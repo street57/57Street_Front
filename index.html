@@ -8,13 +8,14 @@
     <title>57 STREET</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/main.css">
+
 </head>
 
 <body>
 
     <div class="wrapper">
         <aside>
-            <header>
+            <header id="headerMenu">
                 <h1 class="logo">57 STREET</h1>
             </header>
                 <nav>
@@ -40,6 +41,17 @@
                                 <i class="bi bi-cart-fill"></i>Carrito <span id="numerito" class="numerito">0</span>
                             </a>
                         </li>
+
+                        <li>
+                            <button id="cerrarSesion" class="boton-menu" onclick="SessionUtils.signOff()">
+                                <i class="bi bi-x-circle"></i>
+                                Cerrar Sesión
+                            </button>
+                            <button id="iniciarSesion" class="boton-menu" onclick="goToIniciarSesion();">
+                                <i class="bi bi-x-circle"></i>
+                                Iniciar Sesión
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -56,6 +68,7 @@
         </main>
     </div>
 
+    <script src="./js/session.utils.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
