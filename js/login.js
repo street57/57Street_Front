@@ -15,9 +15,18 @@ function registrarUsuario () {
         nombre: $("#nombre").val(),
         correo: $("#correo").val(),
         clave: $("#clave").val(),
+        validarClave: $("#validarClave").val()
     }
     if (!validForm(infoUsuario)) {
         alert("Diligencie los campos.")
+        return;
+    }
+    if (infoUsuario.clave && !/^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$/.test(infoUsuario.clave)){
+        alert("La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.")
+        return;
+    }
+    if (infoUsuario.clave != infoUsuario.validarClave){
+        alert("La clave debe coincidir.")
         return;
     }
     $.ajax({
@@ -58,7 +67,7 @@ function loginUsuario  () {
         success: function (data) {
             SessionUtils.setUsuarioSession(data);
             SessionUtils.setToken(data.token);
-            window.location.href = "http://127.0.0.1:5500";
+            window.location.href = "http://127.0.0.1:5501";
         },
         error: function(xhr, status, error) {
             const err = JSON.parse(xhr.responseText);

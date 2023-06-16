@@ -26,21 +26,11 @@
         </div>
         <form class="formualario">
             <h2 class="create-account">Crear una cuenta</h2>
-            <div class="iconos">
-                <div class="border-icon">
-                    <box-icon type='logo' name='gmail'></box-icon>
-                </div>
-                <div class="border-icon">
-                    <box-icon name='facebook-circle' type='logo' ></box-icon>
-                </div>
-                <div class="border-icon">
-                    <box-icon type='logo' name='twitter'></box-icon>
-                </div>
-            </div>
             <p class="cuenta-gratis" >Crear una cuenta gratis</p>
             <input id="nombre" type="text" placeholder="Nombre">
             <input id="correo" type="email" placeholder="Email">
-            <input id="clave" type="password" placeholder="Contraseña">
+            <input id="clave" type="password" placeholder="Clave">
+            <input id="validarClave" type="password" placeholder="Repetir clave">
             <input onclick="registrarUsuario();" type="button" value="Registrarse ">
         </form>
     </div>
@@ -49,21 +39,12 @@
         
         <form class="formualario">
             <h2 class="create-account">Iniciar sesión</h2>
-            <div class="iconos">
-                <div class="border-icon">
-                    <box-icon type='logo' name='gmail'></box-icon>
-                </div>
-                <div class="border-icon">
-                    <box-icon name='facebook-circle' type='logo' ></box-icon>
-                </div>
-                <div class="border-icon">
-                    <box-icon type='logo' name='twitter'></box-icon>
-                </div>
-            </div>
             <p class="cuenta-gratis" >¿Aún no tienes cuenta?</p>
-            <input id="correoLogin" type="email" placeholder="Email">
-            <input id="claveLogin" type="password" placeholder="Contraseña">
-            <input onclick="loginUsuario()" type="button" value="Iniciar Sesión">
+            <div class="form-group">
+                <input id="correoLogin" type="email" placeholder="Email">
+                <input id="claveLogin" type="password" placeholder="Contraseña">
+                <input onclick="loginUsuario()" type="button" value="Iniciar Sesión">
+            </div>    
         </form>
         
         <div class="welcome-back">
