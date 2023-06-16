@@ -223,6 +223,7 @@ function cargarProductos(productosElegidos) {
             <h3 class="producto-titulo">${producto.titulo}</h3>
             <p class="producto-precio">$${producto.precio}</p>
             <button class="producto-agregar" id="${producto.id}">Agregar</button>
+            <button class="producto-detalle" id="${producto.id}">Detalle</button>
         </div>
 `;
 
@@ -316,7 +317,7 @@ function validateSesion() {
     const header = document.querySelector("#headerMenu");
     header.innerHTML = `${header.innerHTML} <p>${usuario.fullName}</p>`;
   }
-}
+ }
 
 function goToIniciarSesion() {
   window.location.href = "http://127.0.0.1:5501/login.html";
