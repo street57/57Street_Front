@@ -1,5 +1,5 @@
 //Dfinición de variables
-const url = "http://localhost:3000/api/articulos/";
+const url = "http://localhost:5501/api/articulos/";
 const contenedor1 = document.querySelector("tbody");
 let resultados = "";
 
