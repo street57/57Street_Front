@@ -13,7 +13,9 @@ document.addEventListener('click', e =>{
 function registrarUsuario () {
     const infoUsuario = {
         nombre: $("#nombre").val(),
+        apellidos: $("#apellidos").val(),
         correo: $("#correo").val(),
+        celular: $("#celular").val(),
         clave: $("#clave").val(),
         validarClave: $("#validarClave").val()
     }
@@ -21,8 +23,10 @@ function registrarUsuario () {
         alert("Diligencie los campos.")
         return;
     }
-    if (infoUsuario.clave && !/^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$/.test(infoUsuario.clave)){
-        alert("La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.")
+    debugger;
+    const cumpleValidacionClave = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,20}$/.test(infoUsuario.clave);
+    if (infoUsuario.clave && !cumpleValidacionClave){
+        alert("La clave debe tener al menos entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.")
         return;
     }
     if (infoUsuario.clave != infoUsuario.validarClave){
