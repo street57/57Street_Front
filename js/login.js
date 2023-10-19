@@ -21,7 +21,7 @@ function registrarUsuario () {
         alert("Diligencie los campos.")
         return;
     }
-    if (infoUsuario.clave && !/^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$/.test(infoUsuario.clave)){
+    if (infoUsuario.clave && !/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(infoUsuario.clave)){
         alert("La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.")
         return;
     }
