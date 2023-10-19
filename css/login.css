@@ -108,7 +108,7 @@ background: linear-gradient(to right, #FFFDE4, #005AA7); /*W3C, IE 10+/ Edge, Fi
     width: 70%;
     display: block;
     margin: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-radius: 10px;
     border-bottom: white thin solid;
     text-align: center;
